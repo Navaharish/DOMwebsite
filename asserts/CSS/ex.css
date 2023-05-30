@@ -1,0 +1,21 @@
+/*SAMPLE PROJECT*/
+/*!SampleProject*/
+body {
+  text-align: center;
+  font-size: larger;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*Header*/
+h1 {
+  background-color: rgb(21, 229, 21);
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+/*# sourceMappingURL=ex.css.map */
