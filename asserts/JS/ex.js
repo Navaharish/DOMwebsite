@@ -1,28 +1,44 @@
-const client = {
-  Name: "navaharish",
-  place: "salem",
-  work: "student",
-  greetclients() {
-    return `Hello "${this.Name}" nice to meet you from "${this.place}" ,Best of luck for your work as "${this.work}"`
-  }
+// console.log(document.body instanceof EventTarget);
+// console.log(document.body instanceof Node);
+// console.log(document.body instanceof Element);
+// console.log(document.body instanceof Element);
+// console.log(document.body instanceof HTMLElement);
+// console.log(document.body instanceof HTMLBodyElement);
 
-}
-//prompt text
+// console.log(document.body.nodeType);
 
-let promptName = prompt("your name here!");
-let prompPlace = prompt("your place here!");
-let promptProf = prompt("your proffesion here!")
+/* <div class="alert ">✅ Successfully updated your content</div> */
 
-//changing the input
+let inputName = document.getElementById('input-field');
+let inputButton = document.getElementById('input-btn');
+let familyContent = document.getElementById('family');
+let main = document.querySelector('.main')
 
-client.Name = promptName;
-client.place = prompPlace;
-client.work = promptProf;
+// creating HTML Elements
 
-let greeting = client.greetclients();
+const div = document.createElement('div');
+
+// creating HTML className
+
+div.className = "alert";
+// creating HTML innerTextNode
+const TextNode = document.createTextNode('✅ Successfully updated your content');
+
+div.prepend(TextNode);
 
 
+inputButton.addEventListener("click", () => {
+  let inputName = document.getElementById('input-field');
+  const li = document.createElement("li");
+  li.className = 'family-name';
+  const liTextNode = document.createTextNode(`${inputName.value}`)
+  li.append(liTextNode);
 
-let visiblity = document.write(greeting);
+  familyContent.prepend(li);
 
-console.log(greeting);
+
+  // familyContent.innerHTML += `<li class="family-name">${inputName.value} </li>`
+  main.prepend(div)
+})
+
+
