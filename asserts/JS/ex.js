@@ -1,11 +1,4 @@
-// console.log(document.body instanceof EventTarget);
-// console.log(document.body instanceof Node);
-// console.log(document.body instanceof Element);
-// console.log(document.body instanceof Element);
-// console.log(document.body instanceof HTMLElement);
-// console.log(document.body instanceof HTMLBodyElement);
 
-// console.log(document.body.nodeType);
 
 /*Global Variables*/
 let inputName = document.getElementById('input-field');
@@ -15,6 +8,8 @@ let main = document.querySelector('.main')
 let fragment = document.createDocumentFragment();
 
 
+
+familyContent.insertAdjacentHTML('beforebegin', "<li>Hello I am the New List</li>");
 
 //creating heading of the app
 /* <h1 class="head ">NAME ENTERING APP</h1> */
@@ -32,6 +27,11 @@ fragment.append(head1);
 
 console.log();
 main.prepend(fragment);
+
+
+//Geting and setting
+//Resetting Heading content
+head1.innerHTML = "NAME REGISTERING APP"
 
 // creating HTML Elements(Alert of the app)
 /* <div class="alert ">✅ Successfully updated your content</div> */
@@ -54,34 +54,16 @@ inputButton.addEventListener("click", () => {
   const li = document.createElement("li");
   li.className = 'family-name';
   const liTextNode = document.createTextNode(`${inputName.value}`)
-  li.append(liTextNode); s
+  li.append(liTextNode);
   familyContent.append(li);
   main.prepend(div)
 
 })
 
-//looping the List
-
-//with Fragment
-console.time("fragement-Time:")
-for (i = 1; i <= 1000; i++) {
-  let fragLiEl = document.createElement('li');
-  fragLiEl.className = "family-name";
-  let fragLiElText = document.createTextNode(`New List :${i}`);
-  fragLiEl.append(fragLiElText);
-  fragment.append(fragLiEl);
-  familyContent.append(fragment);
-
-}
-console.timeEnd("fragement-Time:")
 
 
 
 
-
-//Geting and setting
-//Resetting Heading content
-head1.innerHTML = "NAME REGISTERING APP"
 
 
 
