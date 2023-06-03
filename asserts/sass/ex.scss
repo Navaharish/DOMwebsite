@@ -21,9 +21,9 @@ body {
 
 h1 {
   background-color: rgb(255, 255, 255);
-  padding: 1rem 1.5rem;
+  padding: 1rem 0rem;
   width: 50%;
-  margin-left: 22rem;
+  margin: auto;
   color: black;
   border-radius: 10px;
   border: 1px solid #444444;
@@ -31,6 +31,7 @@ h1 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #444444;
+  margin-top: 1rem;
 }
 
 .family {
@@ -50,6 +51,12 @@ h1 {
     margin-bottom: 1rem;
     color: rgb(68, 68, 68);
     border-radius: 5px;
+
+    &:hover {
+      background-color: rgba(22, 22, 231, 0.788);
+      color: #fff;
+      font-weight: 600;
+    }
   }
 }
 
@@ -82,4 +89,6 @@ h1 {
   background-color: lightgreen;
   color: #323232;
   padding: 1rem 0rem;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
 }
