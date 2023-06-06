@@ -38,10 +38,12 @@ h1 {
   background-color: white;
 }
 .family-name {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid black;
   width: 50%;
   margin: auto;
-  padding: 1rem 1em;
+  padding: 1rem 1.5em;
   margin-bottom: 1rem;
   color: rgb(68, 68, 68);
   border-radius: 5px;

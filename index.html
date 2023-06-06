@@ -4,29 +4,70 @@
 <head>
   <link rel="stylesheet" href="./asserts/CSS/ex.css">
 
+  <!-- Font awsome icon CDN -->
+  <!-- FontAwesome 6.2.0 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- (Optional) Use CSS or JS implementation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+    integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
 
   <main class="main">
     <div class="input">
-      <input type="text" placeholder="Enter your Name Here" class="input-field" id="input-field">
+      <input type="text" placeholder="Enter your Company Here" class="input-field" id="input-field">
       <button class="input-btn" id="input-btn">ENTER</button>
     </div>
 
 
     <ul class="family" id="family">
-      <li class="family-name">venkatesh</li>
-      <li class="family-name">Rekha</li>
+      <li class="family-name">
+        <div> Brand Makers</div>
+        <div onclick="removeItem(event)">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </li>
 
-      <li class="family-name">Navaharish</li>
-      <li class="family-name">Dhinesh</li>
-      <li id="family-name"></li>
+      <li class="family-name">
+        <div> TATA Enterprises</div>
+        <div onclick="removeItem(event)">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </li>
+
+
+      <li class="family-name">
+        <div>Tesla EV cars</div>
+        <div onclick="removeItem(event)">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </li>
+
+      <li class="family-name">
+        <div>Britaniya private limited</div>
+        <div onclick="removeItem(event)">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </li>
+      </li>
     </ul>
-    <script src="./asserts/JS/ex.js"></script>
+    <button class="resyncBtn">RESYNC</button>
 
-    <script src="./asserts/JS/Testing.js"></script>
+
+    <div class="clone-elements"></div>
+
   </main>
+
+  <script src="./asserts/JS/ex.js"></script>
+
+  <!-- For Learning  Purpose -->
+  <script src="./asserts/JS/Testing.js"></script>
 
 </body>
 
