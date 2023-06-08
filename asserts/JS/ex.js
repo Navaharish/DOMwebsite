@@ -67,28 +67,25 @@ inputButton.addEventListener("click", () => {
 
 })
 
-
-
-//cloning it
-
-
-let resyncBTN = document.querySelector(".resyncBtn")
-let cloneElement = document.querySelector(".clone-elements")
-
-resyncBTN.addEventListener("click", () => {
-
-  cloneElement.innerHTML = "";
-
-  let cloningName = familyContent.cloneNode(true)
-  cloneElement.append(cloningName)
-
-})
-
-
 //Company Name removing Effect
 
 function removeItem(event) {
   let removeEl = event.target.parentElement.parentElement;
   removeEl.remove();
 }
+
+//Array
+
+let companyType = ["product based", "service base", "raw material providers"];
+
+
+//for..of
+// let empty = [];
+
+// [...companyType].forEach((comp) => {
+//   empty.push(comp)
+// })
+// console.log(empty);
+
+console.log(familyContent.children[1].previousElementSibling.innerText);
 
