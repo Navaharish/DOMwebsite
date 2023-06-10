@@ -74,18 +74,72 @@ function removeItem(event) {
   removeEl.remove();
 }
 
-//Array
+var ageField = document.querySelector("#input-age")
+parseInt(ageField.value, 10)
 
-let companyType = ["product based", "service base", "raw material providers"];
+//setting inline  css by js
+
+//set attributes
+
+// ageField.setAttribute("style", "background-color: rgba(194, 209, 209, 0.614); padding: 15px 50px; border-radius: 5px;outline: none;margin: 20px;")
 
 
-//for..of
-// let empty = [];
+//2. ageField.style.padding = "20px 50px"
+// ageField.style.backgroundColor = "red"
 
-// [...companyType].forEach((comp) => {
-//   empty.push(comp)
-// })
-// console.log(empty);
 
-console.log(familyContent.children[1].previousElementSibling.innerText);
+ageField.style.cssText = "background-color: rgba(194, 209, 209, 0.614); padding: 15px 50px; border-radius: 5px;outline: none;margin: 20px; ";
+
+
+//Creating the Factorial Formulae
+// let promptValue = prompt("Enter your Age Here")
+// ageField.setAttribute("value", promptValue)
+
+
+let promtValue = prompt("Enter the Factorial Number")
+
+let n = promtValue;
+
+function factorial(n) {
+  if (n < 1) {
+    return "Enter the positive Number"
+  }
+  else if (n == 0 || n == 1) {
+
+    return 1;
+
+  }
+  else {
+    return n * factorial(n - 1);
+  }
+
+
+}
+
+answer = factorial(n);
+
+ageField.setAttribute("value", answer)
+console.log("The Value of Factorial is " + n + ":" + answer);
+
+
+
+
+
+//testing
+// function factorial(n) {
+//   if (n < 0) {
+//     return "number has to be positive."
+//   }
+
+//   //base case
+//   if (n == 0 || n == 1) {
+//     return 1;
+//     //recursive case
+//   } else {
+//     return n * factorial(n - 1);
+//   }
+// }
+// let n = -1;
+// answer = factorial(n)
+// console.log("Factorial of " + n + " : " + answer);
 
