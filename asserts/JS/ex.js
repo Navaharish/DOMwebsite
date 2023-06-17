@@ -63,7 +63,6 @@ inputButton.addEventListener("click", () => {
   divI.append(i);
   main.prepend(div)
 
-  console.log(li);
 
 })
 
@@ -74,18 +73,58 @@ function removeItem(event) {
   removeEl.remove();
 }
 
-//Array
+let inputDetail = document.querySelector(".detail-input");
+let detailBtn = document.querySelector(".detail-btn");
 
-let companyType = ["product based", "service base", "raw material providers"];
+let inputClickEvent = () => {
+  if (inputDetail.classList.contains("hide") === true) {
+    detailBtn.innerText = "hide input";
+    detailBtn.style.backgroundColor = "gray";
+    inputDetail.style.display = "block"
+    inputDetail.classList.remove("hide")
 
 
-//for..of
-// let empty = [];
+  } else {
+    detailBtn.innerText = "show input";
+    detailBtn.style.backgroundColor = "green";
+    inputDetail.classList.add("hide")
 
-// [...companyType].forEach((comp) => {
-//   empty.push(comp)
-// })
-// console.log(empty);
+  }
+}
 
-console.log(familyContent.children[1].previousElementSibling.innerText);
+function toggleInput() {
+  detailBtn.addEventListener("click", inputClickEvent);
+}
 
+toggleInput();
+
+//Bubbling And Capturing
+
+let section = document.querySelector("section");
+let sectionDiv = document.querySelector("section div");
+let span = document.querySelector("section div span");
+let para = document.querySelector("section div p");
+
+section.addEventListener("click", function (event) {
+  alert("you cliked Section");
+
+})
+
+sectionDiv.addEventListener("click", function (event) {
+  alert("you cliked div");
+  event.stopImmediatePropagation();
+
+})
+
+sectionDiv.addEventListener("click", function (event) {
+  alert("you cliked another div");
+})
+
+
+span.addEventListener("click", function () {
+  alert("you cliked span");
+})
+
+para.addEventListener("click", function () {
+  alert("you cliked para");
+})
