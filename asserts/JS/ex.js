@@ -63,7 +63,6 @@ inputButton.addEventListener("click", () => {
   divI.append(i);
   main.prepend(div)
 
-  console.log(li);
 
 })
 
@@ -74,72 +73,58 @@ function removeItem(event) {
   removeEl.remove();
 }
 
-var ageField = document.querySelector("#input-age")
-parseInt(ageField.value, 10)
+let inputDetail = document.querySelector(".detail-input");
+let detailBtn = document.querySelector(".detail-btn");
 
-//setting inline  css by js
-
-//set attributes
-
-// ageField.setAttribute("style", "background-color: rgba(194, 209, 209, 0.614); padding: 15px 50px; border-radius: 5px;outline: none;margin: 20px;")
-
-
-//2. ageField.style.padding = "20px 50px"
-// ageField.style.backgroundColor = "red"
+let inputClickEvent = () => {
+  if (inputDetail.classList.contains("hide") === true) {
+    detailBtn.innerText = "hide input";
+    detailBtn.style.backgroundColor = "gray";
+    inputDetail.style.display = "block"
+    inputDetail.classList.remove("hide")
 
 
-ageField.style.cssText = "background-color: rgba(194, 209, 209, 0.614); padding: 15px 50px; border-radius: 5px;outline: none;margin: 20px; ";
-
-
-//Creating the Factorial Formulae
-// let promptValue = prompt("Enter your Age Here")
-// ageField.setAttribute("value", promptValue)
-
-
-let promtValue = prompt("Enter the Factorial Number")
-
-let n = promtValue;
-
-function factorial(n) {
-  if (n < 1) {
-    return "Enter the positive Number"
-  }
-  else if (n == 0 || n == 1) {
-
-    return 1;
+  } else {
+    detailBtn.innerText = "show input";
+    detailBtn.style.backgroundColor = "green";
+    inputDetail.classList.add("hide")
 
   }
-  else {
-    return n * factorial(n - 1);
-  }
-
-
 }
 
-answer = factorial(n);
+function toggleInput() {
+  detailBtn.addEventListener("click", inputClickEvent);
+}
 
-ageField.setAttribute("value", answer)
-console.log("The Value of Factorial is " + n + ":" + answer);
+toggleInput();
+
+//Bubbling And Capturing
+
+let section = document.querySelector("section");
+let sectionDiv = document.querySelector("section div");
+let span = document.querySelector("section div span");
+let para = document.querySelector("section div p");
+
+section.addEventListener("click", function (event) {
+  alert("you cliked Section");
+
+})
+
+sectionDiv.addEventListener("click", function (event) {
+  alert("you cliked div");
+  event.stopImmediatePropagation();
+
+})
+
+sectionDiv.addEventListener("click", function (event) {
+  alert("you cliked another div");
+})
 
 
+span.addEventListener("click", function () {
+  alert("you cliked span");
+})
 
-
-
-//testing
-// function factorial(n) {
-//   if (n < 0) {
-//     return "number has to be positive."
-//   }
-
-//   //base case
-//   if (n == 0 || n == 1) {
-//     return 1;
-//     //recursive case
-//   } else {
-//     return n * factorial(n - 1);
-//   }
-// }
-// let n = -1;
-// answer = factorial(n)
-// console.log("Factorial of " + n + " : " + answer);
-
+para.addEventListener("click", function () {
+  alert("you cliked para");
+})
